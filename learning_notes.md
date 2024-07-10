@@ -39,5 +39,16 @@ The website provides additional features to modify the simulation experience. Su
   - Allows the user to change various high-level settings of the simulation (such as language and the ability to see explanatory text in the control panel text box); configure text to speech settings; change the color of the various elements in the simultor.
 
 ## Key takeaways
+**Running a While Do Example**
+This section describes the use of the simulation to understand how a CPU processes a program.
+1. First 3 steps: initializing the loop variables
+
+**Binary and Bits**
+Talk about how bit size/length is relevant to how a CPU runs. E.g. going from 4 bit to 64 bit processors, and how that reflects in the length of the instruction binary that the CPU can process.
 
 ## Personal Insights or reflections
+**The limits of the CPU**
+I was under the impression that the CPU was in charge of doing a lot more work at its most fundamental level. However, this simulation has taught me that the CPU only performs arithmetic and logic functions on data expressed as binary. This has opened my eyes to the amount of abstractions that are required to turn this fundemtal binary processing into more complex instructions that need to be interpreted by devicies like the display. 
+
+
+## Feedback and Reflections
