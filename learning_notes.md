@@ -42,19 +42,41 @@ The website provides additional features to modify the simulation experience. Su
 #### Running a While Do Example
 This section describes the use of the simulation to understand how a CPU processes a program.
 1. First 3 steps: initializing the loop variables
+   
 ![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/f9004664-a3d8-4bae-b78f-ad9d852accec)
    - To run the while loop, the CPU first has to populate some ram addresses for the SUM and COUNT variables. To do this, the CPU first has to introduce integers into the equation. It does this by running the immediate LOD instruciton, so that the accumulator holds an integer that can be assigned to addresses within ram. Once the integer 0 is in the accumulator, it can be stored in other ram locations for SUM and COUNT using the direct STO instruction and specifying the SUM, then COUNT addresses in ram.
      ![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/ed903766-f593-48d5-8ce6-3cb0c3fa2fde)
      ![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/e7ca2c23-84c5-432f-9c66-994a1c0ab46a)
 
  2. Compare the current iteration of the loop to the max amount of iterations the loops wants to perform.
+    
     ![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/7bdbb424-bd2a-4a84-8a63-410b5822ce7d)
-    1. First, the CPU loads (LOD) the data stored at the MAX address (24) in memory. This is achieved by first retrieving the LOD instruction by accessing memory 6 in the address BUS, an enable signal being sent via the control BUS, then receiving the instruction via the data bus to the instruction register. The instruction register then decodes the instruction, signals address 26 in memory, then sends an enable signal via the control bus to retrieve the integer held at address 26 and load it into the ALU by first passing it into the MUX, then into the ALU. (**Descriptions of how the bus functions will be ommitted onwards, to avoid verbose repitition**) 
-    2. D
+    1. Address 6: the CPU loads (LOD) the data stored at the MAX address (24) in memory. This is achieved by first retrieving the LOD instruction by accessing memory 6 in the address BUS, an enable signal being sent via the control BUS, then receiving the instruction via the data bus to the instruction register. The instruction register then decodes the instruction, signals address 26 in memory, then sends an enable signal via the control bus to retrieve the integer held at address 26 and load it into the ALU by first passing it into the MUX, then into the ALU. This is the start of each iteration. (**Descriptions of how the bus functions will be ommitted onwards, to avoid verbose repitition**) 
+    2. Address 8: The CPU then loads the integer stored at the max address in RAM into the ALU. This performs a CMR instruction, which will result in the Z or N flag switching to indicate whether the previously loaded value in the ALU is equal to the value stored at MAX (computed via subtracting value at max from value currently in accumulator). Because the count is 0 and the max is 5 in the first iteration, the Z flag is update to 0, to indicate the values were not equal.
+![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/01ea4068-e5f0-4978-ac35-2cb9cd1e643c)
+
+    3. Address 10: The CPU is then given the JZ instruction, which will jump to the ending condition of the loop (stored at memory address 22 in the form of a HLT instruction). This is the portion of the loop that checks before the start of each iteration to determine if the end condition has been met or not. Because the first iteration does not have the Z flag set, the next address in memory is passed to the CPU.
+
+![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/12ddec0e-a879-4871-bc40-f8d13784b115)
+![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/cf289431-82dc-4f26-8e4c-69f5b4a028d3)
+
+ 3. Execute the desired instructions to be followed in each iteration.
+
+    ![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/678e7c2f-f4e8-4a86-9064-a1d548961812)
+    1. The first step of the iteration is to update the count variable by 1, to indicate a new iteration has been performed. This is achieved using the ADD instruciton then the STO instruction to update count + 1 to the count address in memory.
+
+
+    2. The next step in the iteration is to take the previously loaded and computed current iteration number, and add the integer held in the sum address. This new value is then stored in the sum address, where it will be re-retrieved in every iteration. Once this has been achieved, the loop then resets by passing a JMP instruction that brings the CPU back to the memory address where the initial instruction for each iteration is held (6, labeled "WHILE:"). The above described loop then repeats until count is equal to the integer held at MAX address in memory (26: 5). For this program, execution ends with a final sum of 15, and the Z flag set to 1 last, where it would have jumped to the HLT instruction.
+
+    
+![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/6202a0b9-60c9-4fe8-a363-171540c06b95)
+![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/03b1d536-78d3-49b7-8eb9-a6a1bfc59983)
+![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/b7d0b9f5-76af-4f48-a861-db28b1baa680)
+
 
 
 #### Binary, bits, and the CPU
-Talk about how bit size/length is relevant to how a CPU runs. E.g. going from 4 bit to 64 bit processors, and how that reflects in the length of the instruction binary that the CPU can process.
+It is important to note that the CPU only works with binary. In the above description, we described the CPU in human-readable conversions of binary (10-based numbers and strings for instructions and ram labels). This is extremely important in considering the CPU architecture. Specifically, the number of bits that the CPU components are able to process. In a 4-bit CPU, this would range from 0000 to 1111. Whereas for a 64-bit CPU, this range is in binary 64-digits long. This architecture is key in describing not only what the ALU and other components can process, but in the required width of the bus so that it is able to transmit the 64 bit wide data. From this understanding, it is much easier to interpet how important advances were in CPU bit size to be able to interpret more complex instructions. 
 
 ## Personal Insights or reflections
 #### The limits of the CPU
