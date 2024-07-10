@@ -28,15 +28,15 @@ In addition to the simulatred CPU & RAM, the website provides a control panel at
 
 The website provides additional features to modify the simulation experience. Such as:
 1. Manual
-  Details information regarding the history and purpose of this tool; a description for each of the instruction set terms that the CPU simulator supports;  keyboard shortcuts; a guide on how to write, load, and save files that this visualization supports; and examples of pseudocode and their associated simulation instruction set.
+  - Details information regarding the history and purpose of this tool; a description for each of the instruction set terms that the CPU simulator supports;  keyboard shortcuts; a guide on how to write, load, and save files that this visualization supports; and examples of pseudocode and their associated simulation instruction set.
 2. Examples
-   Allows the user to select from three pre-defined popular programming operations. Selecting any of these options will edit the simulation to run the selected operation.
+  - Allows the user to select from three pre-defined popular programming operations. Selecting any of these options will edit the simulation to run the selected operation.
 3. Load
-   Allows the user to load a .cpuvs file to populate the simulator.
+  - Allows the user to load a .cpuvs file to populate the simulator.
 4. Save
-   Allows the user to save the current view of the simulation as either a URL or a .cpuvs file.
+ -  Allows the user to save the current view of the simulation as either a URL or a .cpuvs file.
 5. Settings
-   Allows the user to change various high-level settings of the simulation (such as language and the ability to see explanatory text in the control panel text box); configure text to speech settings; change the color of the various elements in the simultor.
+  - Allows the user to change various high-level settings of the simulation (such as language and the ability to see explanatory text in the control panel text box); configure text to speech settings; change the color of the various elements in the simultor.
 
 ## Key takeaways
 
