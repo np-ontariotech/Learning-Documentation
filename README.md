@@ -8,5 +8,7 @@ The format of each markdown file follows the format described for the "Class Wor
   5. Personal insights or reflections
 
 Documentation has been completed for the following two learning tools:
-[Learning Notes for CPU Visual Simulator](learning_notes.md)
-[Learning Notes for Compiler Explorer](learning_notes1.md)
+
+1. [Learning Notes for CPU Visual Simulator](learning_notes.md)
+
+2. [Learning Notes for Compiler Explorer](learning_notes1.md)
