@@ -16,7 +16,7 @@ At its highest level, Compiler Explorer allows you to see the compiled code of a
 -	Allows you to check which compilers are able to compile the specified source code. This is especially useful for seeing how interpretable a given source code is. For example, imagine you are using the newest release of C++ to code a program. If your coworkers are using earlier releases, it is possible that the code you send them fails to compile successfully in their environment.
 ![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/a05bea7f-cb4f-47e6-9572-83b8810837af)
 
-####	Control flow graph window
+#### The control flow graph window
 -	Displays a graphical view to how the compiled assembly code will run. This graph view uses assembly labels to separate the code for better readability, allowing the user to visually see when certain assembly labels are jumped to based on conditionals in early code.
 ![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/30eaec72-80d0-4d26-8582-ec46265fa68b)
 
@@ -30,11 +30,15 @@ On a similar note, this tool allows you to further understand languages which si
 
 ![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/8bab6df1-1560-476e-a4fe-24f811c13f9c)
 
+The control flow graph window does a great job at visually representing the instruction flow in a CPU. In the CPU visualisation simulator, we were introduced to how blocks of instructions in memory are processed by the CPU and how certain conditions lead to leaps to instructions in differing parts of the memory. The graph view gives a great visual representation of these blocks in RAM separated into difference nodes that are jumped to from conditions in higher order nodes.
+![image](https://github.com/np-ontariotech/Learning-Documentation/assets/175245621/98a39663-c22b-47d5-9407-aa0edb622336)
+
 
 ## Personal Insights or reflections
+#### Conformance
 In my current job as a data analyst, I code quite frequently in SQL, Scala, and Python. This code is often re-used by coworkers who perform similar data analysis. The Compiler Explorer’s conformance window feature has opened my eyes to just how important it is to understand the conformance limitations of the code I produce. From now on I will make it an essential first step in my programming to document all the variables that can cause conformance issues for my coworkers, such as the programming language version and the library version.
 
-
-
+#### Visual representation of separated processes
+The visual representation of compiled code into different nodes does a great job at expressing how we should visually interpret the code we write. This is especially true for thinking about conditional code such as recursion algorithms. Whenever I write code in the future, I will try and visualize the different components in a fashion similar to the control flow graph window (or when complicated enough, look for a third-party tool to do so).
 
 ## Feedback and Reflections
