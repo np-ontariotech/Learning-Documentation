@@ -12,6 +12,7 @@ Notes are categorized by the component within computer architecture they are mos
 
 ### Software-Hardware Interface
 1. [🛠️] [Learning Notes for Compiler Explorer](learning_notes1.md)
+2. [🎓] [Language Models as Compilers](https://github.com/np-ontariotech/Learning-Documentation/blob/main/llm_compilers.md)
  
 ### Memory
 
