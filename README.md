@@ -8,9 +8,11 @@ Notes are categorized by the component within computer architecture they are mos
 
 ### CPU
 1. [🛠️] [Learning Notes for CPU Visual Simulator](learning_notes.md)
-2. [🛠️] [Learning Notes for Compiler Explorer](learning_notes1.md)
-3. [🛠️] [Learning Notes for emulsiV CPU Simulator](learning_notes2.md)
+2. [🛠️] [Learning Notes for emulsiV CPU Simulator](learning_notes2.md)
 
+### Software-Hardware Interface
+1. [🛠️] [Learning Notes for Compiler Explorer](learning_notes1.md)
+ 
 ### Memory
 
 
