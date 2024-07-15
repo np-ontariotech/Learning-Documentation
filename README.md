@@ -1,14 +1,21 @@
 # Learning-Documentation
-This repository holds documentation outlining my understandings of two key tools provided to us for INFR 2810. 
-The format of each markdown file follows the format described for the "Class Work - July 10" assignment, as follows:
-  1. Link title
-  2. URL
-  3. Summary of content
-  4. Key takeaways
-  5. Personal insights or reflections
+This repository holds documentation outlining my understandings and learnings through the INFR 2810 course at ontario tech.
 
-Documentation has been completed for the following two learning tools:
+Notes are categorized by the component within computer architecture they are most closely associated with. Emoji tags denote the type of resource from which the notes were synthesized; see bottom of this document for a emoji tag legend. 
 
-1. [Learning Notes for CPU Visual Simulator](learning_notes.md)
 
-2. [Learning Notes for Compiler Explorer](learning_notes1.md)
+## Table of Contents
+
+### CPU
+1. [🛠️] [Learning Notes for CPU Visual Simulator](learning_notes.md)
+2. [🛠️] [Learning Notes for Compiler Explorer](learning_notes1.md)
+3. [🛠️] [Learning Notes for emulsiV CPU Simulator](learning_notes2.md)
+
+### Memory
+
+
+Tag Dictionary:
+| Emoji | Resource | 
+|----------|----------|
+| 🎓| Academic Paper | 
+| 🛠️| Visualization Tool | 
