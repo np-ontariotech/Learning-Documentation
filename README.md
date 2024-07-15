@@ -1,7 +1,7 @@
 # Learning-Documentation
 This repository holds documentation outlining my understandings and learnings through the INFR 2810 course at ontario tech.
 
-Notes are categorized by the component within computer architecture they are most closely associated with. Emoji tags denote the type of resource from which the notes were synthesized; see bottom of this document for a emoji tag legend. 
+Notes are categorized by the component within computer architecture they are most closely associated with. Emoji tags denote the type of resource from which the notes were synthesized; see bottom of this document for an emoji tag legend. 
 
 
 ## Table of Contents
