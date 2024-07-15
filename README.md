@@ -14,7 +14,7 @@ Notes are categorized by the component within computer architecture they are mos
 ### Memory
 
 
-Tag Dictionary:
+## Tag Dictionary:
 | Emoji | Resource | 
 |----------|----------|
 | 🎓| Academic Paper | 
