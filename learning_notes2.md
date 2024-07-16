@@ -52,7 +52,46 @@ Below is a description for the steps carried out for the given initial values he
 		1. The program counter performs it's default increment (+00000004), indicating the next memory address to be fetched. 
 		2. ![image](https://github.com/user-attachments/assets/365e3056-cc7e-46ff-883a-f396c9f20e2e)
 
-2. D
+2. `lui x2, 0xc0000`
+	1. Fetch
+		1. The CPU accesses the new memory address from the PC, loading in the new address and data into the bus and passing the data into the instruction register to be decoded.
+		2. ![image](https://github.com/user-attachments/assets/70d4620f-31bd-41c1-9f0d-22494b48f315)
+
+	2. Decode
+		1. LUI function of `lui 2, c0000000` is loaded, which will load the imm value to specified register at address 2. 
+		2. ![image](https://github.com/user-attachments/assets/7b64edf7-16a9-4078-9f76-fe262a43e931)
+
+	3. ALU
+		1. ALU specifies operation 'b', meaning resultant will just be value in b. This resultant will be passed on to register.
+		2. ![image](https://github.com/user-attachments/assets/c33f1190-3a92-4005-aa13-6c726811d0f8)
+
+	4. Mem/Reg
+		1. Resultant from the ALU is stored in the register specified in original instruction in the instruction register.
+		2. ![image](https://github.com/user-attachments/assets/fc4d36e3-3937-48f1-9ffd-6efdf4d05bea)
+
+	5. PC
+		1. As in previous step, the default program counter increment is added to access the next instruction.
+		2. ![image](https://github.com/user-attachments/assets/d475bcd6-96e3-4b40-8cd3-ec1c462e0a14)
+
+3. `lbu x3, 0(x1)`
+	1. Fetch
+		1. CPU fetches instruction from next ram address, as explained in previous steps.
+		2. ![image](https://github.com/user-attachments/assets/980c036e-48a4-43de-963f-a26213d65b43)
+
+	2. Decode
+		1. LBU function of `lbu x3, 0(x1)` is decoded. Indicating it will access the value held in register x1, add the immediate value of 00000000 to the data held in x1, then extract the data held at the memory address of that summed value, and finally load that data into register x3.
+		2. ![image](https://github.com/user-attachments/assets/5a736172-f0a9-4ade-b77c-ae84e719ae70)
+
+	3. ALU
+		1. As described above, data in x1 is added to imm to obtain memory address to be accessed. 
+		2. ![image](https://github.com/user-attachments/assets/0c4c9a47-2810-4060-9778-1c7bd8619429)
+
+	4. Mem/Reg
+		1. Memory address r (from ALU) is accessed. Data held in that address, specifically unsigned byte for the lbu function, is then accessed into the bus and then stored into previously specified memory address x3
+		2. ![image](https://github.com/user-attachments/assets/6d4eff7e-465b-431b-a6c5-89f678166515)
+
+	5. PC
+		1. Default instruction memory step is performed, exactly as described above.
 3. D
 4. D
 5. D
