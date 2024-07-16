@@ -18,12 +18,14 @@ During the course of the Hello program, multiple assembly functions are called t
 	`SB rs2, imm(rs1)`
 6. **jal**: Stores the next address to be accessed from program counter (pc +4) in the specified register (rd), then moves the program counter to the current address plus some specified value (imm) 
 	`JAL rd, imm`
+
 Variable Reference:
 - imm = immediate value. Some specified data, as opposed to an address to access.
 - rd = the address in the register that is being accessed for use in the specified function; specifically the destination where output will be loaded. 
 - rs = the address in the register that is being accessed for use in the specified function; specifically the address where data is extracted for use by the function.
 ### Program Steps
 Below is a description for the steps carried out for the given initial values held in the memory. Each step will describe how the CPU processes the instructions.
+
 ![image](https://github.com/user-attachments/assets/64280926-0ffd-459c-9026-f9ea5cf2e575)
 
 1. `addi x1, x0, 32`
