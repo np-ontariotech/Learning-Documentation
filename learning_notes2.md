@@ -13,7 +13,7 @@
 
 
 ### Instructions
-During the course of the Hello program, multiple assembly functions are called to execute the CPU instructions. In describing how the function works, the below list of functions will be referenced. Each function is given a description followed by the format of its syntax.
+During the course of the Hello program, multiple  functions are called to execute the CPU instructions. In describing how the program works, the below list of functions will be referenced. Each function is given a description followed by the format of its syntax.
 1. **addi**: Adds value from specified register address (rs1) to some specified immediate value (imm) and then stores it in the specified register address (rd)
 	`ADDI rd, rs1, imm`
 2. **lui**: Loads specified value (imm) into specified register address (rd)
