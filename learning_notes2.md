@@ -1,8 +1,13 @@
 # Learning Notes for emulsiV
-**Link title:** emulsiV  
+**Link title:** emulsiV 
+
 **URL:** https://eseo-tech.github.io/emulsiV/
 
-## Explaining "Hello" Example
+**Documentaion:** https://eseo-tech.github.io/emulsiV/doc/
+
+**General Description:** This website provides a CPU simulator that is a little more in-depth than the previous [CPU Visualization Tool](https://github.com/np-ontariotech/Learning-Documentation/blob/main/learning_notes.md) we looked at. Most of the interaction features are the same, with documentation and pre-loaded program examples to visualize in the CPU.
+
+## Explaining the "Hello" Example
 
 ![hello_loop](https://github.com/user-attachments/assets/376fddda-ac21-44fc-ae5a-e013dc41b8c7)
 
