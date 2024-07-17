@@ -67,7 +67,8 @@ Below is a description for the steps carried out for the given initial values he
 
 	2. Decode
 		1. LUI function of `lui 2, c0000000` is loaded, which will load the imm value to specified register at address 2. 
-		2. ![image](https://github.com/user-attachments/assets/7b64edf7-16a9-4078-9f76-fe262a43e931)
+		2. ![image](https://github.com/user-attachments/assets/edb5af95-9e2d-4672-ac13-d3af680f93d9)
+
 
 	3. ALU
 		1. ALU specifies operation 'b', meaning resultant will just be value in b. This resultant will be passed on to register.
