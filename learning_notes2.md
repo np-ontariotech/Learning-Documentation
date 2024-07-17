@@ -92,11 +92,85 @@ Below is a description for the steps carried out for the given initial values he
 
 	5. PC
 		1. Default instruction memory step is performed, exactly as described above.
-3. D
-4. D
-5. D
-6. D
-7. D
-8. D
+4. `beq x3, x0, +16`
+	1. Fetch
+		1. CPU fetches instruction from next ram address, as explained in previous steps.
+	2. Decode
+		1. The instruction is decoded as `beq x3, x0, +16`. Which will result in a comparison of values stored in register addresses x3 and x0. If equal, the pc will go to pc + specified imm value (16) instead of the default +4.
+		2. ![image](https://github.com/user-attachments/assets/aedeb002-2798-41bc-8e0c-a8638e7e58e8)
+
+	3. ALU
+		1. The ALU starts by calculating the current PC address of 0000000c plus the immediate value (16: represented as 00000010 in base-16), obtaining the memory address to be accessed in the PC if the comparison is equal.
+		2. ![image](https://github.com/user-attachments/assets/caa4a7ff-f70d-4163-a74d-8e20a4128ad6)
+
+	4. Compare
+		1. The comparator is passed the data held in specified register addresses x3 (represented in cell a) and x0 (cell b). The result (in this step) is false, resulting in the PC progressing as usual.
+		2. ![image](https://github.com/user-attachments/assets/d1220870-8ead-4896-9ab7-81e564bb0d1d)
+
+	5. Mem/Reg
+	6. PC
+		1. As stated above, due to a `false` result, PC moves as usual.
+		2. ![image](https://github.com/user-attachments/assets/61bcc91f-a79f-4f2c-b1dd-bfcc5e6eabe5)
+
+5. `sb x3, 0(x2)`
+	1. Fetch
+		1. Processed as in previous steps.
+		2. ![image](https://github.com/user-attachments/assets/3d382c6f-be52-4a26-ab83-23a568dd79c5)
+
+	2. Decode
+		1. `sb x3, 0(x2)` function is decoded. This will instruct the CPU to transfer data held in some specified register (x3)  to be stored in a computed memory address (immediate value 00000000 + data stored in register x2 )
+		2. ![image](https://github.com/user-attachments/assets/74fd19cc-177c-4b6e-91ff-ba9eb26d7536)
+
+	3. ALU
+		4. The ALU loads an addition operation to add the immediate (in cell b) to the data retrieved from register address x2 (held in cell a). The result is then used as the memory address to store data held in register x3
+		5. ![image](https://github.com/user-attachments/assets/b88f4fd6-b0c8-483b-90c7-4649f300a4b9)
+
+	4. Compare
+	5. Mem/Reg
+		1. In this step, the program comes alive. We can see that the computed memory address c0000000 corresponds to the Text I/O address, and the data passed from register x3 (00000048) corresponds to the character "H" in this text I/O.
+		2. ![image](https://github.com/user-attachments/assets/e8508fa2-b7aa-4c22-be37-b14836b7d887)
+
+	6. PC
+		1. Increments as usual.
+6. `addi x1, x1, 1`
+	1. Fetch
+		1. Performed as previously described.
+	2. Decode
+		1. The instruction is described as the familiar addi function, adding data held in register x1 with imm value 00000001 and storing the result in rs1. It is easy to tell that this specific instruction serves as the counter increment for the loop that is ran to print Hello.
+		2. ![image](https://github.com/user-attachments/assets/2ed59be9-d098-4135-b006-ce84adbe82c8)
+
+	3. ALU
+		1. x20 is pulled from register x1, adding imm value of x1, we get 33 as our result, or x21 as denoted in base-16. 
+		2. ![image](https://github.com/user-attachments/assets/38df5d08-30c6-43ff-8c99-24dda2434f8c)
+
+	4. Compare
+	5. Mem/Reg
+		1. ALU resultant is stored in specified register x1.
+		2. ![image](https://github.com/user-attachments/assets/2cee8f69-1fde-430b-8cbd-d1700ebda447)
+
+	6. PC
+		1. Increments as usual.
+7. `jal x0, -16`
+	1. Fetch
+		1. Fetches as previously described, normal increment.
+	2. Decode
+		1. In this instruction, we receive the jal function in the form of `jal x0, -16`. This function is telling us to store the next pc address (current +4) in register address x0 and to then jump to memory address current + imm value (-16, noted as fffffff0 to subtract using base 16)
+		2. ![image](https://github.com/user-attachments/assets/1821ffae-5c8a-46c7-a9f9-757dce5c5f1f)
+
+	3. ALU
+		1. The ALU adds current PC (x18) to fffffff0 (think of it as ffffffff - 16, or max value minus 16) to obtain x18 minus 16, resulting in x8 (remember, subtracting 16 from 18 in base 16).
+		2. ![image](https://github.com/user-attachments/assets/7966263e-c0cc-453c-885a-f9274e8b862c)
+
+	4. Compare
+	5. Mem/Reg
+	6. PC
+		1. The PC now goes back to address x8, bringing us to the 3rd instruction in our original instruction set. 
+		2. ![image](https://github.com/user-attachments/assets/8bf56716-4db3-4cb2-8bcc-24c8e9aa7b3a)
+
+8. Running the loop until `jal x0, 0` (stored in x1c)
+	1. The program now goes back to our third instruction. This loop will continue to run in order to print our entire desired string into the text I/O. 
+	2.![image](https://github.com/user-attachments/assets/bd54d016-7c04-4e40-8c63-bb1a61814f2c)
+
+	3. Dfe
 9. D
 10. D
