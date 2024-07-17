@@ -4,6 +4,9 @@
 
 ## Explaining "Hello" Example
 
+![hello_loop](https://github.com/user-attachments/assets/376fddda-ac21-44fc-ae5a-e013dc41b8c7)
+
+
 ### Instructions
 During the course of the Hello program, multiple assembly functions are called to execute the CPU instructions. In describing how the function works, the below list of functions will be referenced. Each function is given a description followed by the format of its syntax.
 1. **addi**: Adds value from specified register address (rs1) to some specified immediate value (imm) and then stores it in the specified register address (rd)
@@ -169,8 +172,42 @@ Below is a description for the steps carried out for the given initial values he
 
 8. Running the loop until `jal x0, 0` (stored in x1c)
 	1. The program now goes back to our third instruction. This loop will continue to run in order to print our entire desired string into the text I/O. 
-	2.![image](https://github.com/user-attachments/assets/bd54d016-7c04-4e40-8c63-bb1a61814f2c)
+    
+	2.![ezgif-2-fd2d393178](https://github.com/user-attachments/assets/6c0e1940-a32c-4cd3-9856-d9492bd5dac0)
 
-	3. Dfe
-9. D
-10. D
+	3. The text portion of this loop is principally achieved through the `lbu x3, 0(x1)`. This instruction determines what data will be stored in x3 and then what data will then be passed to the text i/o via instruction `sb x3, 0(x2)` (see descriptions of these instructions above). The actual data that the CPU is pulling to get each character in "Hello" is supplied manually in the memory addresses x20 through x24  
+		1. ![image](https://github.com/user-attachments/assets/f1b35154-9fc6-4869-af22-5f7baed482c0)
+
+	4. The loop decides which specific address to retrieve the Hello characters (stored in x20-x24) from via the +1 increment to register x1 which is achieved via the instruction `addi x1, x1, 1`. Register x1 is initially loaded with x20 via our very first program instruction of `addi x1, x0, 32`.  
+	5. The loop finally concludes when we get an x25 value in register x1, as then we load x0 into register x3, which is then compared against value x0 (via data x0 stored in register x0) in instruction `beq x3, x0, +16`. This is the first time in the loop where the comparison is true, resulting in the PC taking us to memory address x1c for the first time
+		1. ![image](https://github.com/user-attachments/assets/41aafa89-11bb-41ea-8e96-6efd77f17e04)
+
+9. `jal x0, 0`
+	1. Fetch
+		1. Fetches as usual
+	2. Decode
+		1. Decodes a jal instruction with x0 as register and x0 as immediate
+		2. ![image](https://github.com/user-attachments/assets/af855775-7822-4118-b532-07dbfc419770)
+
+	3. ALU
+		1. The ALU adds immediate value x0 to the current pc address of x1c. 
+		2. ![image](https://github.com/user-attachments/assets/1ad1fdcd-00eb-4cde-bd70-c2d23838228c)
+
+	4. Compare
+	5. Mem/Reg
+	6. PC
+		1. This effectively puts us into an infinite loop of accessing the same memory address whose only instruction is to access the same memory address, effectively ending the program.
+		2. ![image](https://github.com/user-attachments/assets/807bdcc0-5055-42d6-90c4-2e77777b278b)
+
+
+## CPU Components
+This is a bonus section to add if time permits. 
+To-Do: describe what each part of the CPU in this visualization does.
+
+## Further Questions
+- How is data standardized between the I/Os, the CPU, and the device attached to any I/O port? From this example, I would imagine that the CPU outputs standardized data, which the device manufacturer then has to understand in developing drivers for their devices so that they can take the specific outputted data from any CPU the device connects to, standardize that data (assuming different CPUs can produce different outputs), and then use that data to operate their device.
+- How are different endian structures implemented? This CPU took memory data into the BUS in reverse order than it was stored in the memory address. I believe this is referred to as little endian, as opposed to big endian. Does that mean that RAM must be manufactured in little or big endian to work with that corresponding little or big endian CPU, or will the ram always store data the same, and the CPU data retrieval from RAM is the only part where endian size matters? Furthermore, is there any computational cost to reversing the order of the data as opposed to just accessing it in its original positioning? What are the pros and cons to different size endians?
+
+## Takeaways/General Thoughts
+- Its very interesting to see how relatively simple it is to implement a loop via a CPU instruction set, RAM, and the CPU components. That's not to say it is easy in the slightest, but that this visualization has greatly illuminated the black box behind how a CPU works by implementing a program that is very simple to understand and a tool (the while loop) that is used in everyday programming.
+  
