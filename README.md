@@ -9,13 +9,15 @@ Notes are categorized by the component within computer architecture they are mos
 ### CPU
 1. [🛠️] [Learning Notes for CPU Visual Simulator](learning_notes.md)
 2. [🛠️] [Learning Notes for emulsiV CPU Simulator](learning_notes2.md)
-3. [🎓] [A Survey of Computer Architecture Simulation Techniques & Tools](learning_notes3.md)
+
+### Memory
 
 ### Software-Hardware Interface
 1. [🛠️] [Learning Notes for Compiler Explorer](learning_notes1.md)
 2. [🎓] [Language Models as Compilers](https://github.com/np-ontariotech/Learning-Documentation/blob/main/llm_compilers.md)
  
-### Memory
+### System
+1. [🎓] [A Survey of Computer Architecture Simulation Techniques & Tools](learning_notes3.md)
 
 
 ## Tag Dictionary:
