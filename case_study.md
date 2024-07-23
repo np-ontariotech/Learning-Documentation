@@ -1,4 +1,4 @@
-# **The Computational Memory System, Memory Hierarchy, and Cache Design**
+# **The Computer Memory System, Memory Hierarchy, and Cache Design**
 
 Table of contents:
 1. [Introduction](#Introduction)
