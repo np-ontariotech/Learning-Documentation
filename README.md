@@ -11,7 +11,8 @@ Notes are categorized by the component within computer architecture they are mos
 2. [🛠️] [Learning Notes for emulsiV CPU Simulator](learning_notes2.md)
 
 ### Memory
-1. [✏️] [The Computer Memory System, Memory Hierarchy, and Cache Design](https://github.com/np-ontariotech/Learning-Documentation/blob/main/case_study.md)
+1. [✏️] [Case Study: The Computer Memory System, Memory Hierarchy, and Cache Design](https://github.com/np-ontariotech/Learning-Documentation/blob/main/case_study.md)
+2. [▶️] [Final Project: Computer Memory 101](https://youtu.be/X6ELGeFfHII )
 
 ### Software-Hardware Interface
 1. [🛠️] [Learning Notes for Compiler Explorer](learning_notes1.md)
@@ -25,5 +26,6 @@ Notes are categorized by the component within computer architecture they are mos
 | Emoji | Resource | 
 |----------|----------|
 | 🎓| Academic Paper | 
-| ✏️| Self-Written Report|
+| ✏️| Self-Written |
+| ▶️| Video |
 | 🛠️| Visualization Tool | 
