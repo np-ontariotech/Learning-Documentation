@@ -12,7 +12,7 @@ Notes are categorized by the component within computer architecture they are mos
 
 ### Memory
 1. [✏️] [Case Study: The Computer Memory System, Memory Hierarchy, and Cache Design](https://github.com/np-ontariotech/Learning-Documentation/blob/main/case_study.md)
-2. [▶️] [Final Project: Computer Memory 101](https://youtu.be/X6ELGeFfHII )
+2. [▶️] [Final Project: Computer Memory - An introduction to RAM, DRAM, SRAM, the Memory Hierarchy, Caches, and DDR5 RAM](https://youtu.be/ShQmOfwq46c))
 
 ### Software-Hardware Interface
 1. [🛠️] [Learning Notes for Compiler Explorer](learning_notes1.md)
